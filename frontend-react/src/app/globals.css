@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+body {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 30px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1f2937;
+    color: #f3f4f6;
+  }
+}
+
+/* Estilos base para elementos */
+button {
+  @apply px-4 py-2 rounded transition-colors duration-200;
+  background-color: var(--primary-button);
+  color: white;
+}
+
+button {
+  /* El cursor cambia a mano automáticamente */
+  cursor: pointer;
+  /* Transición suave para todos los cambios */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Evita que el texto se seleccione al hacer click rápido */
+  -user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animación general para CUALQUIER botón al pasar el cursor */
+button:hover {
+  transform: translateY(-3px); /* Se eleva un poco */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+  filter: brightness(1.1); /* Brilla un poquito */
+}
+
+/* Efecto cuando se presiona (click) */
+button:active {
+  transform: translateY(-1px) scale(0.95);
+  transition: all 0.1s;
+}
+
+table {
+  @apply w-2xl border-collapse bg-white dark:bg-zinc-900;
+}
+
+th,
+td {
+  @apply border border-gray-300 dark:border-gray-700 p-2;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media print {
+  button,
+  .SubMenuUsuarios,
+  nav {
+    display: none !important;
+  }
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden !important;
+}
